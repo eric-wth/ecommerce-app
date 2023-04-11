@@ -15,11 +15,16 @@ app.use(cors());
 app.use(bodyParser.json({ limit: '30mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 
+app.use('/', (req, res, next) => {
+    return res.status(200).json({ msg: 'Hello from product service' })
+})
+
 
 //SERVER
 const startServer = async() => {
     const PORT = process.env.PORT;
     app.listen(PORT, () => {
+
         console.log(`Server running on port ${PORT}`);
     });
 

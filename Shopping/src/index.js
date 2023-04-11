@@ -17,6 +17,7 @@ app.use(bodyParser.json({ limit: '30mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 
 
+
 //SERVER
 const startServer = async() => {
     const PORT = process.env.PORT;
@@ -35,7 +36,7 @@ const startServer = async() => {
     })
     .catch((err) => {
         console.log(`DB not connected - ${err}`);
-    });
+    });    
 
     
     //API
